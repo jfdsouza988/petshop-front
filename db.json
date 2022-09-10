@@ -1,0 +1,31 @@
+{
+  "pets": [
+    {
+      "id": "2022-09-10T17:08:55.725Z",
+      "name": "nina",
+      "breed": "huaushau",
+      "age": 2,
+      "owner": {
+        "id": "2022-09-10T16:25:56.651Z",
+        "name": "Julião Petruckio",
+        "phone": "51 999842122",
+        "address": "Rua José Custódio de Oliveira, 232"
+      },
+      "type": "cat"
+    },
+    {
+      "id": "2022-09-10T17:14:07.867Z",
+      "name": "pepe",
+      "breed": "asasa",
+      "age": 8,
+      "owner": {
+        "id": "2022-09-10T16:25:56.651Z",
+        "name": "Julião Petruckio",
+        "phone": "51 999842122",
+        "address": "Rua José Custódio de Oliveira, 232"
+      },
+      "type": "cachorro"
+    }
+  ],
+  "owners": []
+}
