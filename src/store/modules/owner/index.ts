@@ -12,7 +12,7 @@ export const owner: Module<StateOwner, State> = {
   mutations: {
     [ADD_OWNER](state, owner: IOwner) {
       const ownerData = {
-        id: new Date().toISOString(),
+        id: owner.id,
         name: owner.name,
         phone: owner.phone,
         address: owner.address,
@@ -39,7 +39,6 @@ export const owner: Module<StateOwner, State> = {
     },
     [REGISTER_OWNER](context, owner: IOwner) {
       return http.post("/owners", {
-        id: new Date().toISOString(),
         name: owner.name,
         phone: owner.phone,
         address: owner.address,

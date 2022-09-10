@@ -9,7 +9,7 @@
         </span>
       </p>
     </div>
-    <PetCard v-for="(pet, index) in pets" :key="index" :pet="pet" @selectedPet="selectPet" />
+    <PetCard v-for="pet in pets" :key="pet.id" :pet="pet" @selectedPet="selectPet" />
     <Box v-if="petsIsEmpty">
       Você não possui nenhum pet cadastrado :(
     </Box>

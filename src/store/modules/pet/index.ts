@@ -12,7 +12,7 @@ export const pet: Module<StatePet, State> = {
   mutations: {
     [ADD_PET](state, pet: IPet) {
       const petData = {
-        id: new Date().toISOString(),
+        id: pet.id,
         name: pet.name,
         age: pet.age,
         breed: pet.breed,
@@ -33,7 +33,7 @@ export const pet: Module<StatePet, State> = {
     [GET_PETS]({ commit }, filter: string) {
       let url = "/pets";
       if(filter) {
-        url += `?name=${filter}`;
+        url += `/search?name=${filter}`;
       }
       http.get(url).then((response) => {
         commit(LOAD_PETS, response.data);
@@ -42,11 +42,10 @@ export const pet: Module<StatePet, State> = {
     [REGISTER_PET]({ commit }, pet: IPet) {
       return http
         .post("/pets", {
-          id: new Date().toISOString(),
           name: pet.name,
           breed: pet.breed,
           age: pet.age,
-          owner: pet.owner,
+          ownerId: pet.owner.id,
           type: pet.type,
         })
         .then(() => {
